@@ -1,3 +1,50 @@
-{
-    
-}
+[
+  [
+    {
+      "name": "apple",
+      "price": 1.0,
+      "origin": "Ontario, Canada",
+      "weight": 3,
+      "image": "https://i5.walmartimages.ca/images/Enlarge/094/514/6000200094514.jpg"
+    },
+    {
+      "name": "banana",
+      "price": 1.0,
+      "weight": 3,
+      "origin": "Ontario, Canada",
+      "image": "https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/325879_2200-732x549.jpg"
+    },
+    {
+      "name": "grape",
+      "price": 1.0,
+      "weight": 3,
+      "origin": "Ontario, Canada",
+      "image": "https://www.thespruceeats.com/thmb/Y9EdJ3E6Pww_AR1Ni2cwmDLuXOM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/nortongo-crimson-6246fc35ccfb48f38a470079901d56c3.jpg"
+    }
+  ],
+  [
+    {
+      "name": "banana",
+      "price": 1.0,
+      "weight": 3,
+      "origin": "Ontario, Canada",
+      "image": "https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/325879_2200-732x549.jpg"
+    },
+    {
+      "name": "grape",
+      "price": 1.0,
+      "weight": 3,
+
+      "origin": "Ontario, Canada",
+      "image": "https://www.thespruceeats.com/thmb/Y9EdJ3E6Pww_AR1Ni2cwmDLuXOM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/nortongo-crimson-6246fc35ccfb48f38a470079901d56c3.jpg"
+    },
+    {
+      "name": "orange",
+      "price": 1.0,
+      "weight": 3,
+
+      "origin": "Ontario, Canada",
+      "image": "https://cdn.britannica.com/24/174524-050-A851D3F2/Oranges.jpg"
+    }
+  ]
+]

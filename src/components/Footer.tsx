@@ -9,9 +9,10 @@ const FooterContainer = styled("div")(() => ({
   display: "flex",
   rowGap: "8px",
   borderTop: "1px solid rgba(0,0,0,0.1)",
-  position: "absolute",
-  bottom: 10,
+  position: "sticky",
+  bottom: 0,
   width: "100%",
+  backgroundColor : "whitesmoke"
 }));
 
 const FooterItemContainer = styled("div")(() => ({
