@@ -1,6 +1,6 @@
 import GoogleIcon from "@mui/icons-material/Google";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import { Divider, IconButton } from "@mui/material";
+import { Divider, IconButton, Link } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -12,15 +12,30 @@ import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
+import { useCookies } from "react-cookie";
+import { useNavigate } from "react-router-dom";
 
 export default function LogIn() {
+  const navigate = useNavigate();
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [cookies, setCookie] = useCookies([
+    "firstName",
+    "lastName",
+    "phoneNumber",
+    "email",
+  ]);
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+
+    setCookie("firstName", "Puck", { path: "/" });
+    setCookie("lastName", "Wang", { path: "/" });
+    setCookie("phoneNumber", "123-456-7890", { path: "/" });
+    setCookie("email", data.get("email"), { path: "/" });
+
+    navigate("/");
   };
 
   return (
@@ -32,6 +47,7 @@ export default function LogIn() {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
+          minHeight: "80vh",
         }}
       >
         <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
@@ -73,9 +89,15 @@ export default function LogIn() {
           >
             Sign In
           </Button>
-          
+          <Grid container justifyContent="flex-end">
+            <Grid item>
+              <Link href="/signup" variant="body2">
+                {"Don't have an account? Sign Up"}
+              </Link>
+            </Grid>
+          </Grid>
           <Divider />
-          
+
           <Grid container>
             <Grid item xs>
               <IconButton color="primary" aria-label="google-oauth">

@@ -13,7 +13,7 @@ function Home() {
   useEffect(() => {
     console.log({ fruits, bundles });
   });
-
+  
   const renderFruitCards = useCallback(() => {
     return (
       <FruitCardsContainer>
