@@ -1,29 +1,53 @@
-import { styled } from "@mui/material";
-import React from "react";
+import {
+    Card,
+    CardActionArea,
+    CardContent,
+    CardMedia,
+    Typography,
+    styled,
+} from "@mui/material";
+import React, { useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 
 const FruitCardContainer = styled("div")(() => ({
-    padding : "4px",
-    border : "1px solid rgba(0,0,0,0.25)",
-    width : "150",
-    height : 100,
-    '& .cover' : {
-        objectFit : "cover"
-    }
+  display: "flex",
+  flexDirection: "column",
+  alignContent: "center",
+  justifyContent: "center",
+  border: "1px solid rgba(0,0,0,0.25)",
+  borderRadius: "0.25",
+  margin: 8,
 }));
 
 interface FruitCardProps {
-    name: string;
-    price : number;
-    origin : string;
-    image : string;
+  META_TYPE?: string;
+  name?: string;
+  price?: number;
+  origin?: string;
+  image?: string;
 }
 
-function FruitCard({name, price, origin, image }: FruitCardProps) {
-    return(
-        <FruitCardContainer className="cover">
-          <img  src={image} alt={name} style={{width : "100%", height : "100%"}} />
-        </FruitCardContainer>
-    )
+function FruitCard({ META_TYPE, name, price, origin, image }: FruitCardProps) {
+  const navigate = useNavigate();
+
+  const handleFruitCardClick = useCallback(() => {
+    navigate(`/fruit-type/${META_TYPE}`);
+  }, [META_TYPE, navigate]);
+
+  return (
+    <FruitCardContainer className="cover">
+      <Card sx={{ maxWidth: 345 }}>
+        <CardActionArea onClick={handleFruitCardClick}>
+          <CardMedia sx={{ height: 140 }} image={image} title={name} />
+          <CardContent sx={{ margin: 0, padding: "0px !important" }}>
+            <Typography variant="body2" component="div">
+              {META_TYPE}
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+      </Card>
+    </FruitCardContainer>
+  );
 }
 
 export default React.memo(FruitCard);

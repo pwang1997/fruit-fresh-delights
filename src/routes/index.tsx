@@ -1,14 +1,16 @@
 import { Route, Routes } from "react-router-dom";
-import Home from "../pages/Home";
 import LogIn from "../pages/Login";
 import SignUp from "../pages/Signup";
+import Fruits from "../pages/build-your-basket/Fruits";
+import MetaFruitTable from "../pages/build-your-basket/MetaFruitTable";
 
 export default function Router() {
   return (
     <Routes>
-      <Route key="index" path="/" element={<Home />} />
+      <Route key="index" path="/" element={<MetaFruitTable />} />
       <Route key="login" path="/login" element={<LogIn />} />
       <Route key="signup" path="/signup" element={<SignUp />} />
+      <Route key="fruit-type" path="/fruit-type/:meta_fruit" element={<Fruits />} />
     </Routes>
   );
 }
