@@ -1,0 +1,111 @@
+{
+  "apples": [
+    {
+      "name": "Red Delicious",
+      "price": "3.99",
+      "image_url": "https://waapple.org/wp-content/uploads/2021/06/red-delicions-with-shadow.png"
+    },
+    {
+      "name": "Granny Smith",
+      "price": "3.99",
+      "image_url": "https://waapple.org/wp-content/uploads/2021/06/red-delicions-with-shadow.png"
+    },
+    {
+      "name": "Golden Delicious",
+      "price": "3.99",
+
+      "image_url": "https://waapple.org/wp-content/uploads/2021/06/red-delicions-with-shadow.png"
+    },
+    {
+      "name": "Fuji",
+      "price": "3.99",
+      "image_url": "https://waapple.org/wp-content/uploads/2021/06/red-delicions-with-shadow.png"
+    },
+    {
+      "price": "3.99",
+      "name": "Gala",
+      "image_url": "https://waapple.org/wp-content/uploads/2021/06/red-delicions-with-shadow.png"
+    }
+  ],
+  "bananas": [
+    {
+      "price": "3.99",
+      "name": "Cavendish",
+      "image_url": "https://example.com/cavendish.jpg"
+    },
+    {
+      "price": "3.99",
+      "name": "Gros Michel",
+      "image_url": "https://example.com/gros_michel.jpg"
+    },
+    {
+      "price": "3.99",
+      "name": "Lady Finger",
+      "image_url": "https://example.com/lady_finger.jpg"
+    },
+    {
+      "price": "3.99",
+      "name": "Plantain",
+      "image_url": "https://example.com/plantain.jpg"
+    },
+    {
+      "price": "3.99",
+      "name": "Red Banana",
+      "image_url": "https://example.com/red_banana.jpg"
+    }
+  ],
+  "grapes": [
+    {
+      "price": "3.99",
+      "name": "Thompson Seedless",
+      "image_url": "https://example.com/thompson_seedless.jpg"
+    },
+    {
+      "price": "3.99",
+      "name": "Red Globe",
+      "image_url": "https://example.com/red_globe.jpg"
+    },
+    {
+      "price": "3.99",
+      "name": "Concord",
+      "image_url": "https://example.com/concord.jpg"
+    },
+    {
+      "price": "3.99",
+      "name": "Muscat",
+      "image_url": "https://example.com/muscat.jpg"
+    },
+    {
+      "price": "3.99",
+      "name": "Sultana",
+      "image_url": "https://example.com/sultana.jpg"
+    }
+  ],
+  "berries": [
+    {
+      "price": "3.99",
+      "name": "Strawberries",
+      "image_url": "https://example.com/strawberries.jpg"
+    },
+    {
+      "price": "3.99",
+      "name": "Blueberries",
+      "image_url": "https://example.com/blueberries.jpg"
+    },
+    {
+      "price": "3.99",
+      "name": "Raspberries",
+      "image_url": "https://example.com/raspberries.jpg"
+    },
+    {
+      "price": "3.99",
+      "name": "Blackberries",
+      "image_url": "https://example.com/blackberries.jpg"
+    },
+    {
+      "price": "3.99",
+      "name": "Goji Berries",
+      "image_url": "https://example.com/goji_berries.jpg"
+    }
+  ]
+}
