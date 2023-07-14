@@ -1,9 +1,9 @@
 import {
-    Button,
-    Card,
-    Container,
-    Typography,
-    styled
+  Button,
+  Card,
+  Container,
+  Typography,
+  styled
 } from "@mui/material";
 import { useCallback, useRef } from "react";
 import { useNavigate, useParams } from "react-router-dom";
@@ -29,13 +29,26 @@ export default function Fruits() {
 
   const handleFruitCardClick = useCallback(
     (fruit: string) => {
-      navigate(`/fruit-type/detail/${fruit}`);
+      navigate(`/fruit-type/${metaType}/${fruit}`);
     },
-    [navigate]
+    [metaType, navigate]
   );
 
-  const handleAddToBasket = useCallback(() => {
+  const handleAddToBasket = useCallback((detailFruit : string, price : string) => {
     console.log("Add to Basket");
+
+    const basket = localStorage.getItem("basket") ?? "{}";
+
+    const parsedBasket = JSON.parse(basket);
+
+    parsedBasket[detailFruit] = {
+      name: detailFruit,
+      quality: 1,
+      price: price,
+      subtotal: price,
+    };
+
+    localStorage.setItem("basket", JSON.stringify(parsedBasket));
   },[]);
 
   const renderFruits = useCallback(() => {
@@ -75,7 +88,7 @@ export default function Fruits() {
                     Price: {fruit.price}/lb
                   </Typography>
 
-                  <Button onClick={handleAddToBasket}>Add to Basket</Button>
+                  <Button onClick={(e) => handleAddToBasket(fruit?.name, fruit?.price)}>Add to Basket</Button>
                 </div>
               </div>
           </Card>

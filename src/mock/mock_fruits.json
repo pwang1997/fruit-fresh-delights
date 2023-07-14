@@ -1,17 +1,17 @@
 {
   "apples": [
     {
-      "name": "Red Delicious",
+      "name": "Red-Delicious",
       "price": "3.99",
       "image_url": "https://waapple.org/wp-content/uploads/2021/06/red-delicions-with-shadow.png"
     },
     {
-      "name": "Granny Smith",
+      "name": "Granny-Smith",
       "price": "3.99",
       "image_url": "https://waapple.org/wp-content/uploads/2021/06/red-delicions-with-shadow.png"
     },
     {
-      "name": "Golden Delicious",
+      "name": "Golden-Delicious",
       "price": "3.99",
 
       "image_url": "https://waapple.org/wp-content/uploads/2021/06/red-delicions-with-shadow.png"
@@ -22,8 +22,8 @@
       "image_url": "https://waapple.org/wp-content/uploads/2021/06/red-delicions-with-shadow.png"
     },
     {
-      "price": "3.99",
       "name": "Gala",
+      "price": "3.99",
       "image_url": "https://waapple.org/wp-content/uploads/2021/06/red-delicions-with-shadow.png"
     }
   ],
@@ -35,12 +35,12 @@
     },
     {
       "price": "3.99",
-      "name": "Gros Michel",
+      "name": "Gros-Michel",
       "image_url": "https://example.com/gros_michel.jpg"
     },
     {
       "price": "3.99",
-      "name": "Lady Finger",
+      "name": "Lady-Finger",
       "image_url": "https://example.com/lady_finger.jpg"
     },
     {
@@ -50,19 +50,19 @@
     },
     {
       "price": "3.99",
-      "name": "Red Banana",
+      "name": "Red-Banana",
       "image_url": "https://example.com/red_banana.jpg"
     }
   ],
   "grapes": [
     {
       "price": "3.99",
-      "name": "Thompson Seedless",
+      "name": "Thompson-Seedless",
       "image_url": "https://example.com/thompson_seedless.jpg"
     },
     {
       "price": "3.99",
-      "name": "Red Globe",
+      "name": "Red-Globe",
       "image_url": "https://example.com/red_globe.jpg"
     },
     {
@@ -104,7 +104,7 @@
     },
     {
       "price": "3.99",
-      "name": "Goji Berries",
+      "name": "Goji-Berries",
       "image_url": "https://example.com/goji_berries.jpg"
     }
   ]
