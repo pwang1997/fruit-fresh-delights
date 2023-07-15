@@ -10,6 +10,21 @@ const FruitCardsContainer = styled("div")(() => ({
   flexWrap: "wrap",
 }));
 
+const PremiumFruitCardsContainer = styled("div")(() => ({
+  display: "flex",
+  flexWrap: "wrap"
+}));
+
+const PremiumTagContainer = styled("div")(() => ({
+  transform : "rotate(-45deg)",
+  position: "absolute",
+  top: "30%",
+  left: "30%",
+  zIndex : "999",
+  fontSize: "24px",
+  fontWeight: "bold"
+}))
+
 export default function MetaFruitTable() {
   useEffect(() => {
     console.log({ fruits, bundles, meta_fruits });
@@ -32,6 +47,26 @@ export default function MetaFruitTable() {
     );
   }, []);
 
+  const renderPremiumFruitCards = useCallback(() => {
+    return (
+      <PremiumFruitCardsContainer>
+        {meta_fruits.map((item, idx) => {
+          return (
+            <div key={idx} style={{ flex: "50%", opacity: "0.4", filter: "alpha(opacity=40)", position : "relative" }}>
+              <PremiumTagContainer>Premium Only</PremiumTagContainer>
+              <FruitCard
+                META_TYPE={item.META_TYPE}
+                image={item.image}
+              />
+            </div>
+          );
+        })}
+      </PremiumFruitCardsContainer>
+    );
+  }, []);
+
+
+
   return (
     <Container style={{minHeight : "100vh"}}>
       <Typography
@@ -50,7 +85,8 @@ export default function MetaFruitTable() {
       >
         All Categories
       </Typography>
-      {/* {renderFruitCards()}  */}
+      {renderFruitCards()}
+      {renderPremiumFruitCards()}
     </Container>
   );
 }

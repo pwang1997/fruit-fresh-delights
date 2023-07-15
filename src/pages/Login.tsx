@@ -1,3 +1,4 @@
+import FaceBookIcon from "@mui/icons-material/Facebook";
 import GoogleIcon from "@mui/icons-material/Google";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { Divider, IconButton, Link } from "@mui/material";
@@ -98,15 +99,26 @@ export default function LogIn() {
           </Grid>
           <Divider />
 
-          <Grid container>
+          <Grid
+            container
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-start",
+            }}
+          >
             <Grid item xs>
               <IconButton color="primary" aria-label="google-oauth">
                 <GoogleIcon />
+                <Typography variant="subtitle2">Sign In With Google</Typography>
               </IconButton>
             </Grid>
             <Grid item xs>
               <IconButton color="primary" aria-label="google-oauth">
-                <GoogleIcon />
+                <FaceBookIcon />
+                <Typography variant="subtitle2">
+                  Sign In With FaceBook
+                </Typography>
               </IconButton>
             </Grid>
           </Grid>
