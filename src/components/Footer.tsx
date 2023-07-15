@@ -4,6 +4,7 @@ import PersonIcon from "@mui/icons-material/Person";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import { Badge, IconButton, styled } from "@mui/material";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const FooterContainer = styled("div")(() => ({
   display: "flex",
@@ -12,7 +13,7 @@ const FooterContainer = styled("div")(() => ({
   position: "sticky",
   bottom: 0,
   width: "100%",
-  backgroundColor : "whitesmoke"
+  backgroundColor: "whitesmoke",
 }));
 
 const FooterItemContainer = styled("div")(() => ({
@@ -25,25 +26,34 @@ const FooterItemContainer = styled("div")(() => ({
 }));
 
 function Footer() {
+  const navigate = useNavigate();
+
   return (
     <FooterContainer>
       <FooterItemContainer>
-        <IconButton sx={{ pb: 0 }}>
+        <IconButton onClick={(e) => navigate("/")} sx={{ pb: 0 }}>
           <HomeIcon />
         </IconButton>
         Home
       </FooterItemContainer>
 
       <FooterItemContainer>
-        <IconButton sx={{ pb: 0 }}>
+        <IconButton onClick={(e) => navigate("/")} sx={{ pb: 0 }}>
           <ManageSearchIcon />
         </IconButton>
         Browse
       </FooterItemContainer>
 
       <FooterItemContainer>
-        <IconButton sx={{ pb: 0 }}>
-          <Badge badgeContent={1} color="success" overlap="circular">
+        <IconButton onClick={(e) => navigate("/basket")} sx={{ pb: 0 }}>
+          <Badge
+            badgeContent={
+              Object.keys(JSON.parse(localStorage.getItem("basket") ?? "{}"))
+                .length
+            }
+            color="success"
+            overlap="circular"
+          >
             <ShoppingBasketIcon />
           </Badge>
         </IconButton>
@@ -51,7 +61,7 @@ function Footer() {
       </FooterItemContainer>
 
       <FooterItemContainer>
-        <IconButton sx={{ pb: 0 }}>
+        <IconButton onClick={(e) => navigate("/account")} sx={{ pb: 0 }}>
           <PersonIcon />
         </IconButton>
         Account

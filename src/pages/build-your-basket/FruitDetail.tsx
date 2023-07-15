@@ -20,7 +20,7 @@ interface FruitDetailProps {
   image_url: string;
 }
 
-interface MockDataProps {
+export interface MockDataProps {
   [key: string]: FruitDetailProps[];
 }
 
@@ -75,6 +75,7 @@ export default function FruitDetail() {
     const parsedBasket = JSON.parse(basket);
 
     parsedBasket[detailFruit] = {
+      type : metaType,
       name: detailFruit,
       quality: count,
       price: mockData[metaType].find((item) => item.name === detailFruit)

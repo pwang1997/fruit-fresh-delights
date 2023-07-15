@@ -42,6 +42,7 @@ export default function Fruits() {
     const parsedBasket = JSON.parse(basket);
 
     parsedBasket[detailFruit] = {
+      type : metaType,
       name: detailFruit,
       quality: 1,
       price: price,
