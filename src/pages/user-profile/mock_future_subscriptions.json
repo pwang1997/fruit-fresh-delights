@@ -1,0 +1,23 @@
+[
+    {
+        "bundle" : "custom bundle set 1",
+        "order": [
+          {
+            "name": "Red-Delicious",
+            "price": "3.99",
+            "quantity": 4
+          },
+          {
+            "name": "banana",
+            "price": "3.99",
+            "quantity": 4
+          }
+        ],
+        "subtotal": "16.99",
+        "completeDate": "2023-07-21",
+        "year" : 2023,
+        "month" : 7,
+        "day" : 14,
+        "status": "Pending"
+      }
+]
