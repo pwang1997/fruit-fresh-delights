@@ -1,10 +1,4 @@
-import {
-  Button,
-  Card,
-  Container,
-  Typography,
-  styled
-} from "@mui/material";
+import { Button, Card, Container, Typography, styled } from "@mui/material";
 import { useCallback, useRef } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import mockFruits from "../../mock/mock_fruits.json";
@@ -34,64 +28,81 @@ export default function Fruits() {
     [metaType, navigate]
   );
 
-  const handleAddToBasket = useCallback((detailFruit : string, price : string) => {
-    console.log("Add to Basket");
+  const handleAddToBasket = useCallback(
+    (detailFruit: string, price: string) => {
+      console.log("Add to Basket");
 
-    const basket = localStorage.getItem("basket") ?? "{}";
+      const basket = localStorage.getItem("basket") ?? "{}";
 
-    const parsedBasket = JSON.parse(basket);
+      const parsedBasket = JSON.parse(basket);
 
-    parsedBasket[detailFruit] = {
-      type : metaType,
-      name: detailFruit,
-      quality: 1,
-      price: price,
-      subtotal: price,
-    };
+      parsedBasket[detailFruit] = {
+        type: metaType,
+        name: detailFruit,
+        quality: 1,
+        price: price,
+        subtotal: price,
+      };
 
-    localStorage.setItem("basket", JSON.stringify(parsedBasket));
-  },[]);
+      localStorage.setItem("basket", JSON.stringify(parsedBasket));
+    },
+    [metaType]
+  );
 
   const renderFruits = useCallback(() => {
     return data.current.map((fruit, idx) => {
       return (
         <FruitCardContainer key={idx}>
           <Card sx={{ maxWidth: 345 }}>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+              }}
+            >
+              <img
+                src={fruit.image_url}
+                alt={fruit.name}
+                style={{ height: 100, width: 100 }}
+                onClick={() => handleFruitCardClick(fruit.name)}
+              />
+
               <div
                 style={{
                   display: "flex",
-                  flexDirection: "row",
+                  flexDirection: "column",
+                  alignContent: "center",
+                  paddingLeft: "8px",
                 }}
               >
-                <img
-                  src={fruit.image_url}
-                  alt={fruit.name}
-                  style={{ height: 100 }}
-                  onClick={() => handleFruitCardClick(fruit.name)}
-                />
+                <Typography
+                  align="left"
+                  gutterBottom={true}
+                  variant="subtitle1"
+                  paddingLeft={1}
+                >
+                  {fruit.name}
+                </Typography>
 
-                <div style={{ display: "flex", flexDirection: "column", alignContent : "center",  }}>
-                  <Typography
-                    align="left"
-                    gutterBottom={true}
-                    variant="subtitle1"
-                    paddingLeft={1}
-                  >
-                    {fruit.name}
-                  </Typography>
+                <Typography
+                  align="left"
+                  gutterBottom={true}
+                  variant="subtitle1"
+                  paddingLeft={1}
+                >
+                  Price: ${fruit.price}/lb
+                </Typography>
 
-                  <Typography
-                    align="left"
-                    gutterBottom={true}
-                    variant="subtitle1"
-                    paddingLeft={1}
-                  >
-                    Price: {fruit.price}/lb
-                  </Typography>
-
-                  <Button onClick={(e) => handleAddToBasket(fruit?.name, fruit?.price)}>Add to Basket</Button>
-                </div>
+                <Button
+                  fullWidth
+                  variant="contained"
+                  size="small"
+                  onClick={(e) => handleAddToBasket(fruit?.name, fruit?.price)}
+                >
+                  Add to Basket
+                </Button>
               </div>
+            </div>
           </Card>
         </FruitCardContainer>
       );

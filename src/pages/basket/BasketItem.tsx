@@ -17,9 +17,14 @@ export default function BasketItem({
 
   return (
     <Container
-      sx={{ display: "flex", alignItems: "center", alignContent: "center" }}
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        alignContent: "center",
+        paddingBottom: "8px",
+      }}
     >
-      <img src={metadata?.image_url} alt={name} width={50} />
+      <img src={metadata?.image_url} alt={name} width={50} height={50} />
       <Box
         sx={{ display: "flex", justifyContent: "space-between", width: "100%" }}
       >

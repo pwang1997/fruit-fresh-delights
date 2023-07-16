@@ -1,0 +1,50 @@
+[
+  {
+    "bundle": "The Fresh Pick",
+    "order": [
+      {
+        "name": "Red-Delicious",
+        "price": "3.99",
+        "quantity": 4
+      },
+      {
+        "name": "Plantain",
+        "price": "3.99",
+        "quantity": 4
+      }
+    ],
+    "subtotal": "16.99"
+  },
+  {
+    "bundle": "Berry Bliss",
+    "order": [
+      {
+        "name": "Red-Delicious",
+        "price": "3.99",
+        "quantity": 4
+      },
+      {
+        "name": "Plantain",
+        "price": "3.99",
+        "quantity": 4
+      }
+    ],
+    "subtotal": "16.99"
+  },
+  {
+    "bundle": "Nature's Bounty",
+    "order": [
+      {
+        "name": "Red-Delicious",
+        "price": "3.99",
+        "quantity": 4
+      },
+      {
+        "name": "Plantain",
+        "price": "3.99",
+        "quantity": 4
+      }
+    ],
+    "subtotal": "16.99"
+  }
+]

@@ -1,10 +1,10 @@
 import {
-    Card,
-    CardActionArea,
-    CardContent,
-    CardMedia,
-    Typography,
-    styled,
+  Card,
+  CardActionArea,
+  CardContent,
+  CardMedia,
+  Typography,
+  styled,
 } from "@mui/material";
 import React, { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
@@ -39,7 +39,13 @@ function FruitCard({ META_TYPE, name, price, origin, image }: FruitCardProps) {
       <Card sx={{ maxWidth: 345 }}>
         <CardActionArea onClick={handleFruitCardClick}>
           <CardMedia sx={{ height: 140 }} image={image} title={name} />
-          <CardContent sx={{ margin: 0, padding: "0px !important" }}>
+          <CardContent
+            sx={{
+              margin: 0,
+              padding: "0px !important",
+              borderTop: "0.25px solid black",
+            }}
+          >
             <Typography variant="body2" component="div">
               {META_TYPE}
             </Typography>

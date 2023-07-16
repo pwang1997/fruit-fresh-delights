@@ -1,9 +1,9 @@
 import {
-    Button,
-    Container,
-    TextField,
-    Typography,
-    styled,
+  Button,
+  Container,
+  TextField,
+  Typography,
+  styled,
 } from "@mui/material";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
@@ -47,10 +47,7 @@ export default function Basket() {
     subscribe.contact = contact;
     subscribe.deliveryTime = deliveryTime;
 
-    localStorage.setItem(
-      "subscribe",
-      JSON.stringify(basket)
-    );
+    localStorage.setItem("subscribe", JSON.stringify(basket));
     localStorage.removeItem("basket");
 
     navigate("/account");
@@ -58,14 +55,18 @@ export default function Basket() {
 
   return (
     <Container style={{ minHeight: "100vh" }}>
-      {renderSelectedBasket()}
-      {
-        Object.keys(basket).length === 0 && (
-            <Typography variant="h4" align="left">Empty Basket</Typography>
-        )
-      }
+      {Object.keys(basket).length === 0 && (
+        <Typography variant="h4" align="left">
+          Empty Basket
+        </Typography>
+      )}
       {Object.keys(basket).length > 0 && (
         <>
+          <Typography align="left" variant="h5">
+            Build your own basket
+          </Typography>
+          {renderSelectedBasket()}
+
           <Typography align="right">
             Subtotal: $
             {[...Object.values(basket)]
@@ -77,7 +78,14 @@ export default function Basket() {
 
           <DeliveryInfoContainer>
             <TextField
-              size="small"
+              id="custom-name"
+              label="Custom Name"
+              variant="outlined"
+              // onChange={(e) => setAddress(e.target.value)}
+            />
+
+            <TextField
+              required
               id="deliery-address"
               label="Delivery Address"
               variant="outlined"
@@ -85,12 +93,12 @@ export default function Basket() {
             />
 
             <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <DemoContainer components={["DatePicker"]} >
+              <DemoContainer components={["DatePicker"]}>
                 <DatePicker label="Delivery Time" />
               </DemoContainer>
             </LocalizationProvider>
             <TextField
-              size="small"
+              required
               id="contact-info"
               label="Contact Info"
               variant="outlined"

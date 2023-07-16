@@ -8,50 +8,49 @@
     {
       "name": "Granny-Smith",
       "price": "3.99",
-      "image_url": "https://waapple.org/wp-content/uploads/2021/06/red-delicions-with-shadow.png"
+      "image_url": "https://assets.shop.loblaws.ca/products/20253488001/b1/en/front/20253488001_front_a01_@2.png"
     },
     {
       "name": "Golden-Delicious",
       "price": "3.99",
-
-      "image_url": "https://waapple.org/wp-content/uploads/2021/06/red-delicions-with-shadow.png"
+      "image_url": "https://resources.markon.com/sites/default/files/styles/large/public/pi_photos/Apples_Golden_Delicious_Hero.jpg"
     },
     {
       "name": "Fuji",
       "price": "3.99",
-      "image_url": "https://waapple.org/wp-content/uploads/2021/06/red-delicions-with-shadow.png"
+      "image_url": "https://www.marcheliantai.ca/image/cache/catalog/products/vegetables-furits/marche-shengtai-grocery-store-vegetables-fruits-65-800x800.jpg"
     },
     {
       "name": "Gala",
       "price": "3.99",
-      "image_url": "https://waapple.org/wp-content/uploads/2021/06/red-delicions-with-shadow.png"
+      "image_url": "https://i5.walmartimages.ca/images/Large/003/207/883391003207.jpg"
     }
   ],
   "bananas": [
     {
       "price": "3.99",
       "name": "Cavendish",
-      "image_url": "https://example.com/cavendish.jpg"
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Cavendish_Banana_DS.jpg"
     },
     {
       "price": "3.99",
       "name": "Gros-Michel",
-      "image_url": "https://example.com/gros_michel.jpg"
+      "image_url": "https://miamifruit.org/cdn/shop/products/ordergrosmichelbananasonline_1000x1000.jpg?v=1601569212"
     },
     {
       "price": "3.99",
       "name": "Lady-Finger",
-      "image_url": "https://example.com/lady_finger.jpg"
+      "image_url": "https://minnetonkaorchards.com/wp-content/uploads/2022/06/AdobeStock_148455354.jpeg"
     },
     {
       "price": "3.99",
       "name": "Plantain",
-      "image_url": "https://example.com/plantain.jpg"
+      "image_url": "https://www.allrecipes.com/thmb/dE6B-lRFVopvyMkQ8Gokb_2Jgfg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/146246-sauteed-sweet-plantains-ddfsm-3X4-5829-a0ea8438139444d68577f36bd0e9a773.jpg"
     },
     {
       "price": "3.99",
       "name": "Red-Banana",
-      "image_url": "https://example.com/red_banana.jpg"
+      "image_url": "https://minnetonkaorchards.com/wp-content/uploads/2022/06/shutterstock_2107989617-scaled.jpg"
     }
   ],
   "grapes": [
