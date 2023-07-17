@@ -27,19 +27,27 @@ export default function SubscriptionSchedule() {
   const renderSubscription = useCallback(() => {
     const subscription = JSON.parse(localStorage.getItem("subscribe") ?? "{}");
 
-    if(Object.keys(subscription).length === 0) return;
-    
+    if (Object.keys(subscription).length === 0) return;
+
     return (
       <>
         {
           <SubscriptionContainer>
-            <div style={{display : "flex", justifyContent : "space-between", width : "100%", alignItems : "center"}}>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                width: "100%",
+                alignItems: "center",
+              }}
+            >
+              <Typography variant="h6">
+                {subscription?.basketName ?? "Custom Basket"}
+              </Typography>
 
-            <Typography variant="h6">
-              {subscription?.basketName ?? "Custom Basket"}
-            </Typography>
-
-            <Button onClick={(e) => localStorage.removeItem("subscribe")}>Cancel</Button>
+              <Button onClick={(e) => localStorage.removeItem("subscribe")}>
+                Cancel
+              </Button>
             </div>
             <Typography>
               Date: {(subscription?.completeDate ?? "2023-07-21") + " Pending"}
@@ -62,7 +70,9 @@ export default function SubscriptionSchedule() {
               Subtotal: $
               {[...Object.values(subscription)]
                 .map((item: any) =>
-                  parseFloat((item.quantity * parseFloat(item.price)).toFixed(2))
+                  parseFloat(
+                    (item.quantity * parseFloat(item.price)).toFixed(2)
+                  )
                 )
                 .reduce((pre, cur) => cur + pre, 0)}
             </Typography>
@@ -111,8 +121,7 @@ export default function SubscriptionSchedule() {
 
             <Typography variant="subtitle2">
               {" "}
-              Subtotal: $
-              {subscription.subtotal}
+              Subtotal: ${parseFloat(subscription.subtotal).toFixed(2)}
             </Typography>
           </SubscriptionContainer>
         );

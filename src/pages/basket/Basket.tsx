@@ -22,7 +22,10 @@ const DeliveryInfoContainer = styled("div")(() => ({
 }));
 
 export default function Basket() {
-  const basket = useMemo(() => JSON.parse(localStorage.getItem("basket") ?? "{}"), []);
+  const basket = useMemo(
+    () => JSON.parse(localStorage.getItem("basket") ?? "{}"),
+    []
+  );
 
   const navigate = useNavigate();
 
@@ -73,11 +76,7 @@ export default function Basket() {
               right: "25%",
             }}
           >
-            <Button
-              fullWidth
-              variant="outlined"
-              onClick={(e) => navigate("/")}
-            >
+            <Button fullWidth variant="outlined" onClick={(e) => navigate("/")}>
               building your basket
             </Button>
           </div>
@@ -97,7 +96,8 @@ export default function Basket() {
               .map((item: any) =>
                 parseFloat((item.quantity * parseFloat(item.price)).toFixed(2))
               )
-              .reduce((pre, cur) => cur + pre, 0)}
+              .reduce((pre, cur) => cur + pre, 0)
+              .toFixed(2)}
           </Typography>
 
           <DeliveryInfoContainer>

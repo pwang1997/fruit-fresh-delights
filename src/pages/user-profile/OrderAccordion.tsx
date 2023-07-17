@@ -5,7 +5,7 @@ import {
   AccordionSummary,
   Box,
   Typography,
-  styled
+  styled,
 } from "@mui/material";
 import { useCallback } from "react";
 import mockOrders from "./mock_orders.json";
@@ -53,8 +53,17 @@ export default function OrderAccordion() {
                   </Typography>
                 );
               })}
-              <Box sx={{ display: "flex", flexDirection: "column", borderTop : "1px solid grey", width : "100%" }}>
-                <Typography align="left">Subtotal: ${item.subtotal}</Typography>
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  borderTop: "1px solid grey",
+                  width: "100%",
+                }}
+              >
+                <Typography align="left">
+                  Subtotal: ${parseFloat(item.subtotal).toFixed(2)}
+                </Typography>
                 <Typography align="left">Status: {item.status}</Typography>
               </Box>
             </AccordionDetails>
