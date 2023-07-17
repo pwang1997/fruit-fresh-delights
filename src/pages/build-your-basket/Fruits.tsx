@@ -108,5 +108,12 @@ export default function Fruits() {
       );
     });
   }, [handleAddToBasket, handleFruitCardClick]);
-  return <Container style={{ minHeight: "100vh" }}>{renderFruits()}</Container>;
+  return (
+    <Container style={{ minHeight: "100vh" }}>
+      <Typography variant="h5" align="left">
+        {metaType}
+      </Typography>
+      {renderFruits()}
+    </Container>
+  );
 }
