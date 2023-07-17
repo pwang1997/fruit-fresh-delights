@@ -4,6 +4,7 @@ import PersonIcon from "@mui/icons-material/Person";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import { Badge, IconButton, styled } from "@mui/material";
 import React from "react";
+import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 
 const FooterContainer = styled("div")(() => ({
@@ -27,7 +28,12 @@ const FooterItemContainer = styled("div")(() => ({
 
 function Footer() {
   const navigate = useNavigate();
-
+  const [cookies] = useCookies([
+    "firstName",
+    "lastName",
+    "phoneNumber",
+    "email",
+  ]);
   return (
     <FooterContainer>
       <FooterItemContainer>
@@ -48,7 +54,7 @@ function Footer() {
         <IconButton onClick={(e) => navigate("/basket")} sx={{ pb: 0 }}>
           <Badge
             badgeContent={
-              Object.keys(JSON.parse(localStorage.getItem("basket") ?? "{}"))
+              !cookies["email"] ? 0 : Object.keys(JSON.parse(localStorage.getItem("basket") ?? "{}"))
                 .length
             }
             color="success"

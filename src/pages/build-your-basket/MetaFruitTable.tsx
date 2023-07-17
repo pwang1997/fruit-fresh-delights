@@ -1,8 +1,8 @@
 import { Container, Typography, styled } from "@mui/material";
 import { useCallback, useEffect } from "react";
+import { useCookies } from "react-cookie";
+import { useNavigate } from "react-router-dom";
 import FruitCard from "../../components/FruitCard";
-import bundles from "../../mock/bundles.json";
-import fruits from "../../mock/fruits.json";
 import meta_fruits from "../../mock/meta_fruits.json";
 import PreBuiltBundleCard from "./PreBuiltBundleCard";
 import default_bundles from "./mock_default_bundles.json";
@@ -28,9 +28,15 @@ const PremiumTagContainer = styled("div")(() => ({
 }));
 
 export default function MetaFruitTable() {
-  useEffect(() => {
-    console.log({ fruits, bundles, meta_fruits });
-  });
+
+  const navigate = useNavigate();
+
+  const [cookies] = useCookies([
+    "firstName",
+    "lastName",
+    "phoneNumber",
+    "email",
+  ]);
 
   const renderFruitCards = useCallback(() => {
     return (
@@ -85,6 +91,12 @@ export default function MetaFruitTable() {
     );
   }, []);
 
+  useEffect(() => {
+    if(!cookies["email"]) {
+      navigate("/login")
+    }
+  }, [])
+  
   return (
     <Container style={{ minHeight: "100vh" }}>
       <Typography align="left" gutterBottom={true} variant="h6">

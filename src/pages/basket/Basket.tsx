@@ -9,6 +9,7 @@ import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import { useCallback, useState } from "react";
+import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 import BasketItem from "./BasketItem";
 
@@ -53,9 +54,16 @@ export default function Basket() {
     navigate("/account");
   }, [address, basket, contact, deliveryTime, navigate]);
 
+  const [cookies] = useCookies([
+    "firstName",
+    "lastName",
+    "phoneNumber",
+    "email",
+  ]);
+
   return (
     <Container style={{ minHeight: "100vh" }}>
-      {Object.keys(basket).length === 0 && (
+      {(Object.keys(basket).length === 0 || !cookies["email"]) && (
         <>
           <Typography variant="h4" align="left">
             Empty Basket
@@ -66,7 +74,7 @@ export default function Basket() {
           </div>
         </>
       )}
-      {Object.keys(basket).length > 0 && (
+      {Object.keys(basket).length > 0 && cookies["email"]&& (
         <>
           <Typography align="left" variant="h5">
             Build your own basket

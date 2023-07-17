@@ -1,12 +1,14 @@
 import {
-    Box,
-    Button,
-    Container,
-    Divider,
-    Typography,
-    styled,
+  Box,
+  Button,
+  Container,
+  Divider,
+  Typography,
+  styled,
 } from "@mui/material";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import { useCookies } from "react-cookie";
+import { useNavigate } from "react-router-dom";
 import AccountContent from "./AccountContent";
 
 const UserProfileContainer = styled("div")(() => ({
@@ -17,9 +19,25 @@ const UserProfileContainer = styled("div")(() => ({
 export default function Account() {
   const [selectedTab, setSelectedTab] = useState("Subscriptions");
 
+  const navigate = useNavigate();
   const handleClick = useCallback((tab: string) => {
     setSelectedTab(tab);
   }, []);
+
+  const [cookies] = useCookies([
+    "firstName",
+    "lastName",
+    "phoneNumber",
+    "email",
+  ]);
+
+  useEffect(() => {
+    if(!cookies["email"]) {
+      navigate("/login")
+    }
+  }, [])
+  
+  
   return (
     <Container style={{ minHeight: "100vh" }}>
       <UserProfileContainer>
