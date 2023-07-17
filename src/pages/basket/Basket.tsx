@@ -43,16 +43,12 @@ export default function Basket() {
   }, [basket]);
 
   const handleSubscribe = useCallback(() => {
-    const subscribe = basket;
-    subscribe.address = address;
-    subscribe.contact = contact;
-    subscribe.deliveryTime = deliveryTime;
 
     localStorage.setItem("subscribe", JSON.stringify(basket));
     localStorage.removeItem("basket");
 
     navigate("/account");
-  }, [address, basket, contact, deliveryTime, navigate]);
+  }, [basket, navigate]);
 
   const [cookies] = useCookies([
     "firstName",
@@ -93,7 +89,7 @@ export default function Basket() {
           <DeliveryInfoContainer>
             <TextField
               id="custom-name"
-              label="Custom Name"
+              label="Basket Name"
               variant="outlined"
               // onChange={(e) => setAddress(e.target.value)}
             />

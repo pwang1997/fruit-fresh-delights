@@ -49,7 +49,7 @@ export default function OrderAccordion() {
               {item.order.map((fruit, idx_) => {
                 return (
                   <Typography key={idx_}>
-                    {fruit.name + " " + fruit.quantity + "lb"}
+                    {fruit.name + " " + fruit.quantity + " lbs"}
                   </Typography>
                 );
               })}
