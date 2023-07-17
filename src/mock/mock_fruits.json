@@ -57,54 +57,54 @@
     {
       "price": "3.99",
       "name": "Thompson-Seedless",
-      "image_url": "https://example.com/thompson_seedless.jpg"
+      "image_url": "https://mygardenlife.com/wp-content/uploads/2022/12/6121_27-1.jpg"
     },
     {
       "price": "3.99",
       "name": "Red-Globe",
-      "image_url": "https://example.com/red_globe.jpg"
+      "image_url": "https://shop.tavora.ca/cdn/shop/products/red-globe-grapes.png?v=1632929541"
     },
     {
       "price": "3.99",
       "name": "Concord",
-      "image_url": "https://example.com/concord.jpg"
+      "image_url": "https://specialtyproduce.com/sppics/20251.png"
     },
     {
       "price": "3.99",
       "name": "Muscat",
-      "image_url": "https://example.com/muscat.jpg"
+      "image_url": "https://specialtyproduce.com/sppics/14996.png"
     },
     {
       "price": "3.99",
       "name": "Sultana",
-      "image_url": "https://example.com/sultana.jpg"
+      "image_url": "https://cdn.shopify.com/s/files/1/0206/9470/files/sultana_grapes_square_zoom.jpg?10679308422784116175"
     }
   ],
   "berries": [
     {
       "price": "3.99",
       "name": "Strawberries",
-      "image_url": "https://example.com/strawberries.jpg"
+      "image_url": "https://clv.h-cdn.co/assets/15/22/2560x1728/gallery-1432664914-strawberry-facts1.jpg"
     },
     {
       "price": "3.99",
       "name": "Blueberries",
-      "image_url": "https://example.com/blueberries.jpg"
+      "image_url": "https://images-prod.healthline.com/hlcmsresource/images/AN_images/blueberries-1296x728-feature.jpg"
     },
     {
       "price": "3.99",
       "name": "Raspberries",
-      "image_url": "https://example.com/raspberries.jpg"
+      "image_url": "https://www.almanac.com/sites/default/files/styles/or/public/image_nodes/raspberries.jpg?itok=rn6Sk4Wm"
     },
     {
       "price": "3.99",
       "name": "Blackberries",
-      "image_url": "https://example.com/blackberries.jpg"
+      "image_url": "https://healthyfamilyproject.com/wp-content/uploads/2020/05/Blackberries-background.jpg"
     },
     {
       "price": "3.99",
       "name": "Goji-Berries",
-      "image_url": "https://example.com/goji_berries.jpg"
+      "image_url": "https://bambooplants.ca/wp-content/uploads/2016/06/goji-berry.jpg"
     }
   ]
 }
