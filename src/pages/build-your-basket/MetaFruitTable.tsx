@@ -4,6 +4,8 @@ import FruitCard from "../../components/FruitCard";
 import bundles from "../../mock/bundles.json";
 import fruits from "../../mock/fruits.json";
 import meta_fruits from "../../mock/meta_fruits.json";
+import PreBuiltBundleCard from "./PreBuiltBundleCard";
+import default_bundles from "./mock_default_bundles.json";
 
 const FruitCardsContainer = styled("div")(() => ({
   display: "flex",
@@ -12,34 +14,31 @@ const FruitCardsContainer = styled("div")(() => ({
 
 const PremiumFruitCardsContainer = styled("div")(() => ({
   display: "flex",
-  flexWrap: "wrap"
+  flexWrap: "wrap",
 }));
 
 const PremiumTagContainer = styled("div")(() => ({
-  transform : "rotate(-45deg)",
+  transform: "rotate(-45deg)",
   position: "absolute",
   top: "30%",
   left: "30%",
-  zIndex : "999",
+  zIndex: "999",
   fontSize: "24px",
-  fontWeight: "bold"
-}))
+  fontWeight: "bold",
+}));
 
 export default function MetaFruitTable() {
   useEffect(() => {
     console.log({ fruits, bundles, meta_fruits });
   });
-  
+
   const renderFruitCards = useCallback(() => {
     return (
       <FruitCardsContainer>
         {meta_fruits.map((item, idx) => {
           return (
             <div key={idx} style={{ flex: "50%" }}>
-              <FruitCard
-                META_TYPE={item.META_TYPE}
-                image={item.image}
-              />
+              <FruitCard META_TYPE={item.META_TYPE} image={item.image} />
             </div>
           );
         })}
@@ -52,12 +51,17 @@ export default function MetaFruitTable() {
       <PremiumFruitCardsContainer>
         {meta_fruits.map((item, idx) => {
           return (
-            <div key={idx} style={{ flex: "50%", opacity: "0.4", filter: "alpha(opacity=40)", position : "relative" }}>
+            <div
+              key={idx}
+              style={{
+                flex: "50%",
+                opacity: "0.4",
+                filter: "alpha(opacity=40)",
+                position: "relative",
+              }}
+            >
               <PremiumTagContainer>Premium Only</PremiumTagContainer>
-              <FruitCard
-                META_TYPE={item.META_TYPE}
-                image={item.image}
-              />
+              <FruitCard META_TYPE={item.META_TYPE} image={item.image} />
             </div>
           );
         })}
@@ -65,28 +69,35 @@ export default function MetaFruitTable() {
     );
   }, []);
 
-
+  const renderPreBuiltFruitCards = useCallback(() => {
+    return (
+      <>
+        {default_bundles.map((bundle, idx) => {
+          return (
+            <PreBuiltBundleCard
+              key={idx}
+              bundleName={bundle.name}
+              image={bundle.image}
+            />
+          );
+        })}
+      </>
+    );
+  }, []);
 
   return (
-    <Container style={{minHeight : "100vh"}}>
-      <Typography
-      align="left"
-      gutterBottom={true}
-      variant="h6"
-      >
+    <Container style={{ minHeight: "100vh" }}>
+      <Typography align="left" gutterBottom={true} variant="h6">
         Top Categories
       </Typography>
       {renderFruitCards()}
 
-      <Typography
-      align="left"
-      gutterBottom={true}
-      variant="h6"
-      >
+      <Typography align="left" gutterBottom={true} variant="h6">
         All Categories
       </Typography>
       {renderFruitCards()}
       {renderPremiumFruitCards()}
+      {renderPreBuiltFruitCards()}
     </Container>
   );
 }

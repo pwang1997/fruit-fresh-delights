@@ -1,50 +1,68 @@
 [
   {
     "bundle": "The Fresh Pick",
+    "name": "The-Fresh-Pick",
     "order": [
       {
         "name": "Red-Delicious",
         "price": "3.99",
-        "quantity": 4
+        "quantity": 4,
+        "type" : "apples",
+        "image_url": "https://waapple.org/wp-content/uploads/2021/06/red-delicions-with-shadow.png"
       },
       {
         "name": "Plantain",
         "price": "3.99",
-        "quantity": 4
+        "quantity": 4,
+        "type" : "bananas",
+        "image_url": "https://www.allrecipes.com/thmb/dE6B-lRFVopvyMkQ8Gokb_2Jgfg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/146246-sauteed-sweet-plantains-ddfsm-3X4-5829-a0ea8438139444d68577f36bd0e9a773.jpg"
       }
     ],
+    "image" : "https://static.vecteezy.com/system/resources/previews/003/705/785/original/basket-with-fruits-isolated-with-icon-illustration-free-vector.jpg",
     "subtotal": "16.99"
   },
   {
     "bundle": "Berry Bliss",
+    "name": "Berry-Bliss",
     "order": [
       {
         "name": "Red-Delicious",
         "price": "3.99",
-        "quantity": 4
+        "quantity": 4,
+        "type" : "apples",
+        "image_url": "https://waapple.org/wp-content/uploads/2021/06/red-delicions-with-shadow.png"
       },
       {
         "name": "Plantain",
         "price": "3.99",
-        "quantity": 4
+        "quantity": 4,
+        "type" : "bananas",
+        "image_url": "https://www.allrecipes.com/thmb/dE6B-lRFVopvyMkQ8Gokb_2Jgfg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/146246-sauteed-sweet-plantains-ddfsm-3X4-5829-a0ea8438139444d68577f36bd0e9a773.jpg"
       }
     ],
+    "image" : "https://static.vecteezy.com/system/resources/previews/003/705/785/original/basket-with-fruits-isolated-with-icon-illustration-free-vector.jpg",
     "subtotal": "16.99"
   },
   {
     "bundle": "Nature's Bounty",
+    "name": "Nature-Bounty",
     "order": [
       {
         "name": "Red-Delicious",
         "price": "3.99",
-        "quantity": 4
+        "quantity": 4,
+        "type" : "apples",
+        "image_url": "https://waapple.org/wp-content/uploads/2021/06/red-delicions-with-shadow.png"
       },
       {
         "name": "Plantain",
         "price": "3.99",
-        "quantity": 4
+        "quantity": 4,
+        "type" : "bananas",
+        "image_url": "https://www.allrecipes.com/thmb/dE6B-lRFVopvyMkQ8Gokb_2Jgfg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/146246-sauteed-sweet-plantains-ddfsm-3X4-5829-a0ea8438139444d68577f36bd0e9a773.jpg"
       }
     ],
+    "image" : "https://static.vecteezy.com/system/resources/previews/003/705/785/original/basket-with-fruits-isolated-with-icon-illustration-free-vector.jpg",
     "subtotal": "16.99"
   }
 ]

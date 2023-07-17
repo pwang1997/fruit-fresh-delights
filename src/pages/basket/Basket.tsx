@@ -56,9 +56,15 @@ export default function Basket() {
   return (
     <Container style={{ minHeight: "100vh" }}>
       {Object.keys(basket).length === 0 && (
-        <Typography variant="h4" align="left">
-          Empty Basket
-        </Typography>
+        <>
+          <Typography variant="h4" align="left">
+            Empty Basket
+          </Typography>
+
+          <div style={{position : "absolute", top : "40%", left : "25%", right : "25%"}}>
+            <Button size="medium" variant="contained" onClick={(e) => navigate("/")}>Start building your basket</Button>
+          </div>
+        </>
       )}
       {Object.keys(basket).length > 0 && (
         <>
