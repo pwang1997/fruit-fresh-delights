@@ -5,11 +5,11 @@ import { MockDataProps } from "../build-your-basket/FruitDetail";
 export default function BasketItem({
   type,
   name,
-  quality,
+  quantity,
 }: {
   type: string;
   name: string;
-  quality: number;
+  quantity: number;
 }) {
   const mockData: MockDataProps = mockFruits;
 
@@ -22,14 +22,18 @@ export default function BasketItem({
         alignItems: "center",
         alignContent: "center",
         paddingBottom: "8px",
+        justifyContent: "space-between",
+        columnGap: "8px",
       }}
     >
-      <img src={metadata?.image_url} alt={name} width={50} height={50} />
+      <div>
+        <img src={metadata?.image_url} alt={name} width={50} height={50} />
+      </div>
       <Box
         sx={{ display: "flex", justifyContent: "space-between", width: "100%" }}
       >
         <span>{name}</span>
-        {quality} lbs * ${metadata?.price}
+        {quantity} lbs * ${metadata?.price}
       </Box>
     </Container>
   );

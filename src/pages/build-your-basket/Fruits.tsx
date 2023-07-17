@@ -39,7 +39,7 @@ export default function Fruits() {
       parsedBasket[detailFruit] = {
         type: metaType,
         name: detailFruit,
-        quality: 1,
+        quantity: 1,
         price: price,
         subtotal: price,
       };

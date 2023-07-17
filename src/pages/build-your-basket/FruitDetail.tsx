@@ -1,3 +1,5 @@
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 import {
   Button,
   Container,
@@ -32,7 +34,6 @@ export default function FruitDetail() {
   const mockData: MockDataProps = mockFruits;
 
   const detailFruit: string = params.detail_fruit as string;
-
   const metaType = params.meta_fruit as
     | "apples"
     | "bananas"
@@ -75,9 +76,9 @@ export default function FruitDetail() {
     const parsedBasket = JSON.parse(basket);
 
     parsedBasket[detailFruit] = {
-      type : metaType,
+      type: metaType,
       name: detailFruit,
-      quality: count,
+      quantity: count,
       price: mockData[metaType].find((item) => item.name === detailFruit)
         ?.price,
       subtotal: (
@@ -99,28 +100,46 @@ export default function FruitDetail() {
           .find((item) => item.name === detailFruit)
           ?.name.replaceAll("-", " ")}
       </Typography>
-      <img
-        src={
-          mockData[metaType].find((item) => item.name === detailFruit)
-            ?.image_url
-        }
-        alt={mockData[metaType].find((item) => item.name === detailFruit)?.name}
-        style={{ height: 100 }}
-      />
-      <Button onClick={incrementCount}>+</Button>
-      {count} lb
-      <Button onClick={decrementCount} disabled={count <= 0}>
-        -
-      </Button>
-      SubTotal:{" "}
-      {(
-        count *
-        parseFloat(
-          mockData[metaType].find((item) => item.name === detailFruit)
-            ?.price as string
-        )
-      ).toFixed(2)}
-      <Button onClick={handleAddToBasket}>Add to Basket</Button>
+      <div style={{ display: "flex", flexDirection: "row", justifyContent : "space-between", marginBottom : "16px" }}>
+        <div>
+          <img
+            src={
+              mockData[metaType].find((item) => item.name === detailFruit)
+                ?.image_url
+            }
+            alt={
+              mockData[metaType].find((item) => item.name === detailFruit)?.name
+            }
+            style={{ height: 100 }}
+          />
+        </div>
+
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <div>
+            <Button onClick={incrementCount}><AddIcon /></Button>
+            {count} lbs
+            <Button onClick={decrementCount} disabled={count <= 1}>
+              <RemoveIcon />
+            </Button>
+          </div>
+          <div>
+            Subtotal: ${" "}
+            {(
+              count *
+              parseFloat(
+                mockData[metaType].find((item) => item.name === detailFruit)
+                  ?.price as string
+              )
+            ).toFixed(2)}
+          </div>
+          <div>
+            <Button onClick={handleAddToBasket} variant="outlined">
+              Add to Basket
+            </Button>
+          </div>
+        </div>
+      </div>
+
       <TableContainer component={Paper}>
         <Table sx={{}} size="small" aria-label="a dense table">
           <TableHead>

@@ -1,4 +1,4 @@
-import { Divider, Typography, styled } from "@mui/material";
+import { Button, Divider, Typography, styled } from "@mui/material";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
@@ -27,13 +27,20 @@ export default function SubscriptionSchedule() {
   const renderSubscription = useCallback(() => {
     const subscription = JSON.parse(localStorage.getItem("subscribe") ?? "{}");
 
+    if(Object.keys(subscription).length === 0) return;
+    
     return (
       <>
         {
           <SubscriptionContainer>
+            <div style={{display : "flex", justifyContent : "space-between", width : "100%", alignItems : "center"}}>
+
             <Typography variant="h6">
               {subscription?.basketName ?? "Custom Basket"}
             </Typography>
+
+            <Button onClick={(e) => localStorage.removeItem("subscribe")}>Cancel</Button>
+            </div>
             <Typography>
               Date: {(subscription?.completeDate ?? "2023-07-21") + " Pending"}
             </Typography>
@@ -45,7 +52,7 @@ export default function SubscriptionSchedule() {
                     {fruit?.name?.replaceAll("-", " ")}
                   </Typography>
                   <Typography variant="subtitle2">
-                    {fruit?.quality} lbs
+                    {fruit?.quantity} lbs
                   </Typography>
                 </OrderContainer>
               );
@@ -55,7 +62,7 @@ export default function SubscriptionSchedule() {
               Subtotal: $
               {[...Object.values(subscription)]
                 .map((item: any) =>
-                  parseFloat((item.quality * parseFloat(item.price)).toFixed(2))
+                  parseFloat((item.quantity * parseFloat(item.price)).toFixed(2))
                 )
                 .reduce((pre, cur) => cur + pre, 0)}
             </Typography>

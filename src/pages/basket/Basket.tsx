@@ -1,6 +1,7 @@
 import {
   Button,
   Container,
+  Divider,
   TextField,
   Typography,
   styled,
@@ -8,7 +9,7 @@ import {
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 import BasketItem from "./BasketItem";
@@ -21,7 +22,7 @@ const DeliveryInfoContainer = styled("div")(() => ({
 }));
 
 export default function Basket() {
-  const basket = JSON.parse(localStorage.getItem("basket") ?? "{}");
+  const basket = useMemo(() => JSON.parse(localStorage.getItem("basket") ?? "{}"), []);
 
   const navigate = useNavigate();
 
@@ -36,14 +37,13 @@ export default function Basket() {
           key={item?.name}
           type={item.type}
           name={item.name}
-          quality={item.quality}
+          quantity={item.quantity}
         />
       );
     });
   }, [basket]);
 
   const handleSubscribe = useCallback(() => {
-
     localStorage.setItem("subscribe", JSON.stringify(basket));
     localStorage.removeItem("basket");
 
@@ -65,23 +65,37 @@ export default function Basket() {
             Empty Basket
           </Typography>
 
-          <div style={{position : "absolute", top : "40%", left : "25%", right : "25%"}}>
-            <Button size="medium" variant="contained" onClick={(e) => navigate("/")}>Start building your basket</Button>
+          <div
+            style={{
+              position: "absolute",
+              top: "40%",
+              left: "25%",
+              right: "25%",
+            }}
+          >
+            <Button
+              fullWidth
+              variant="outlined"
+              onClick={(e) => navigate("/")}
+            >
+              building your basket
+            </Button>
           </div>
         </>
       )}
-      {Object.keys(basket).length > 0 && cookies["email"]&& (
+      {Object.keys(basket).length > 0 && cookies["email"] && (
         <>
           <Typography align="left" variant="h5">
             Build your own basket
           </Typography>
           {renderSelectedBasket()}
 
+          <Divider />
           <Typography align="right">
             Subtotal: $
             {[...Object.values(basket)]
               .map((item: any) =>
-                parseFloat((item.quality * parseFloat(item.price)).toFixed(2))
+                parseFloat((item.quantity * parseFloat(item.price)).toFixed(2))
               )
               .reduce((pre, cur) => cur + pre, 0)}
           </Typography>
@@ -116,9 +130,13 @@ export default function Basket() {
             />
           </DeliveryInfoContainer>
 
-          <Button variant="contained" fullWidth onClick={handleSubscribe}>
-            Subscribe
-          </Button>
+          <div
+            style={{ display: "flex", flexDirection: "column", rowGap: "8px" }}
+          >
+            <Button variant="contained" fullWidth onClick={handleSubscribe}>
+              Weekly Subscription
+            </Button>
+          </div>
         </>
       )}
     </Container>

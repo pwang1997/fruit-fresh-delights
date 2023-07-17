@@ -16,7 +16,7 @@ const FruitCardContainer = styled("div")(() => ({
   flexDirection: "column",
   alignContent: "center",
   justifyContent: "center",
-  border: "1px solid rgba(0,0,0,0.25)",
+  // border: "1px solid rgba(0,0,0,0.25)",
   borderRadius: "0.25",
   margin: 8,
 }));
@@ -48,14 +48,14 @@ function PreBuiltBundleCard({
         parsedBasket[fruit.name] = {
           type: fruit.type,
           name: fruit.name,
-          quality: parsedBasket[fruit.name].quality + fruit.quantity,
+          quantity: parsedBasket[fruit.name].quantity + fruit.quantity,
           price: fruit.price,
         };
       } else {
         parsedBasket[fruit.name] = {
           type: fruit.type,
           name: fruit.name,
-          quality: fruit.quantity,
+          quantity: fruit.quantity,
           price: fruit.price,
         };
       }

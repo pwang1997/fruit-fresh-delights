@@ -29,14 +29,14 @@ export default function BundleFruits() {
         parsedBasket[fruit.name] = {
           type: fruit.type,
           name: fruit.name,
-          quality: parsedBasket[fruit.name].quality + fruit.quantity,
+          quantity: parsedBasket[fruit.name].quantity + fruit.quantity,
           price: fruit.price,
         };
       } else {
         parsedBasket[fruit.name] = {
           type: fruit.type,
           name: fruit.name,
-          quality: fruit.quantity,
+          quantity: fruit.quantity,
           price: fruit.price,
         };
       }
